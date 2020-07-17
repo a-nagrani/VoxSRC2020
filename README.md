@@ -1,6 +1,17 @@
 # VoxSRC-20
 In this repository we provide the validation toolkit for the [VoxCeleb Speaker Recognition Challenge 2020](http://www.robots.ox.ac.uk/~vgg/data/voxceleb/competition.html). The challenge consists of two main tasks, speaker verification and speaker diarisation.  
 
+This repository contains submodules. Please use the following command to clone the repository:
+
+```
+git clone https://github.com/a-nagrani/VoxSRC2020.git --recursive
+```
+
+#### Dependencies
+```
+pip install -r requirements.txt
+```
+
 ## Speaker Verification 
 
 Within speaker verification, we have 3 tracks (open, closed, and self-supervised), however the validation and test data is the same for all three tracks. The validation and test data for the challenge both consist of pairs of audio segments, and the task is to determine whether they are from the same speaker or from different speakers. Teams are invited to create a system that takes the test data and produces a list of floating-point scores, with a single score for each pair of segments.
@@ -102,21 +113,16 @@ For instance:
     SPEAKER abcde 1   0.600   1.320 <NA> <NA> 3 <NA> <NA>
     SPEAKER abcde 1   1.950   0.630 <NA> <NA> 3 <NA> <NA>
 
-If you would like to confirm that a set of RTTM files are valid, use the
-included ``validate_rttm.py`` script. For instance, if you have RTTMs
-``fn1.rttm``, ``fn2.rttm``, ..., then
+If you would like to confirm that your output RTTM file is valid, use the included validate_rttm.py script. We provide an example in `data/diar/baseline.rttm`
+```
+ python validate_rttm.py data/diar/baseline.rttm
+```
 
-     python validate_rttm.py fn1.rttm fn2.rttm ...
-
-will iterate over each line of each file and warn on any that do not match the
-spec.
-
-Your scoring file should be a single file, containing the scores for all the audio segments. An example is provided in `data/diar/baseline.rttm`. 
 
 The file `compute_diarisation_metrics.py` computes both DER and JER. 
+
 ```
 python compute_diarisation_metrics.py -r voxconverse/dev/*.rttm -s data/diar/baseline.rttm
-
 ```
 ### Metrics
 

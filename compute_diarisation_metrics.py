@@ -1,26 +1,9 @@
 #!/usr/bin/env python
-"""Score diarization system output.
-USAGE: python compute_diarisation_metrics.py -r data/diar/gt.rttm -s data/diar/score.rttm 
-
+"""
+Score diarization system output.
 
 This code has been modified from the DSCORE repo: https://github.com/nryant/dscore/blob/master/LICENSE. 
 All copyright lies with the original authors. Please read their license before redistribution. 
-
-To evaluate system output stored in RTTM files ``sys1.rttm``, ``sys2.rttm``,
-... against a corresponding reference diarization stored in RTTM files
-``ref1.rttm``, ``ref2.rttm``, ...:
-
-python compute_diarisation_metrics.py -r ref1.rttm ref2.rttm ... -s sys1.rttm sys2.rttm ...
-
-
-
-which will calculate and report the following metrics both overall and on
-a per-file basis:
-
-- diarization error rate (DER)
-- jaccard error rate (JER)
-
-
 
 """
 from __future__ import print_function
