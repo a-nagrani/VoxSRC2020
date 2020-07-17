@@ -138,7 +138,7 @@ is the sum of
 - missed speech  --  percentage of scored time for which a speech region is
   incorrectly marked as not containing speech
 
-We use a collar of 0.25 seconds and include overlapping speech in the scoring. A score of zero indicates perfect performance and higher scores (which may exceed 100) indicate poorer performance. For more
+We use a collar of 0.25 seconds and include overlapping speech in the scoring. For more
 details, consult section 6.1 of the [NIST RT-09 evaluation plan](https://web.archive.org/web/20100606041157if_/http://www.itl.nist.gov/iad/mig/tests/rt/2009/docs/rt09-meeting-eval-plan-v2.pdf).
 
 #### Jaccard error rate (JER)
